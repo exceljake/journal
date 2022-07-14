@@ -1,0 +1,13 @@
+<nav class="navbar navbar-dark bg-dark position-relative w-100">
+  <span class="navbar-brand mb-0 h1">TinyThoughts</span>
+</nav>
+<div class="p-3 mb-2 bg-secondary text-white vh-100">
+<%= render "form", category: @category %>
+
+<br>
+
+<div>
+  <%= link_to "Show this category", @category %> |
+  <%= link_to "Back to categories", categories_path %>
+</div>
+</div>

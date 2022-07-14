@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-dark position-relative w-100">
+  <span class="navbar-brand mb-0 h1">TinyThoughts</span>
+</nav>
+<div class="p-3 mb-2 bg-secondary text-white vh-100 d-flex align-items-center justify-content-center">
+<div class="card" style="background-color: #212529; width: 15rem;">
+<div class="card-body">
+ <h5 class="card-title">Make a new Category:</h5>
+<%= render "form", category: @category %>
+
+<button type="button" class="btn btn-primary btn-sm"><%= link_to "Go back to categories", categories_path, :class => "text-decoration-none text-white" %></button><br/>
+</div>
+</div>

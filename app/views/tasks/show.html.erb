@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-dark position-relative w-100">
+  <span class="navbar-brand mb-0 h1">TinyThoughts</span>
+</nav>
+<div class="p-3 mb-2 bg-secondary text-white vh-100 d-flex align-items-center justify-content-center">
+<div class="card" style="background-color: #212529; width: 15rem;">
+<div class="card-body">
+ <h5 class="card-title">Task for Category <%= @category.id %></h5>
+<%= render "task", task: @task %> 
+<p>Description: <%= @task.description %></p>
+<p>Deadline: <%= @task.deadline %></p>
+
+<button type="button" class="btn btn-primary btn-sm"><%= link_to "See category", category_path(@category.id), :class => "text-decoration-none text-white" %></button><br/><br/>
+
+<button type="button" class="btn btn-primary btn-sm"><%= link_to "See all tasks", category_tasks_path(@category.id), :class => "text-decoration-none text-white" %></button><br/><br/>
+
+<button type="button" class="btn btn-primary btn-sm"><%= link_to "Edit this category", edit_category_task_path(@category), :class => "text-decoration-none text-white" %></button><br/><br/>
+ </div>
+</div>

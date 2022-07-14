@@ -1,0 +1,46 @@
+<nav class="navbar navbar-dark bg-dark position-relative w-100">
+  <span class="navbar-brand mb-0 h1">TinyThoughts</span>
+</nav>
+<div class="p-3 mb-2 bg-secondary text-white vh-100 d-flex align-items-center justify-content-center">
+<div class="card" style="background-color: #212529; width: 15rem;">
+<div class="card-body">
+
+<%= form_with model: [@category, @task] do |f| %>
+
+<p>
+  <!-- we can access our controller instance variables here -->
+  <% if @task.errors.any? %>
+    <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+<h5>Create a task for Category <%= @category.id %></h5>
+<p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+</p>
+
+<p>
+    <%= f.label :description %><br/>
+    <%= f.text_field :description %>
+</p>
+
+<p>
+    <%= f.label :deadline %><br/>
+    <%= f.datetime_select :deadline %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+
+
+<%= link_to "Go back to tasks", category_tasks_path %>
+</div>
+</div>
+</div>

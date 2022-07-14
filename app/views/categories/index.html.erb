@@ -1,0 +1,35 @@
+<%# /categories %>
+<nav class="navbar navbar-dark bg-dark position-relative w-100">
+  <span class="navbar-brand mb-0 h1">TinyThoughts</span>
+</nav>
+<div class="p-3 mb-2 bg-secondary text-white vh-100">
+ <h1>Your Categories</h1>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @categories.each do |category| %>
+    <tr>
+       <td>
+        <%= category.id %>
+      </td>
+      <td>
+        <%= category.name %>
+      </td>
+      <td>
+        <%= link_to("See category", category_path(category.id))%>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+  <div class="w-100 p-3 d-flex flex-row-reverse">
+    <button type="button" class="btn btn-primary btn-sm"><%= link_to "Add new category", new_category_path, :class => "text-decoration-none text-white" %></button>
+   </div>
+<%= @test %>
+</div>

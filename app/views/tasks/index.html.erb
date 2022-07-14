@@ -1,0 +1,35 @@
+<nav class="navbar navbar-dark bg-dark position-relative w-100">
+  <span class="navbar-brand mb-0 h1">TinyThoughts</span>
+</nav>
+<div class="p-3 mb-2 bg-secondary text-white vh-100">
+ <h2>Category #<%= @category.id %> Tasks:</h2>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @tasks.each do |task| %>
+    <tr>
+       <td>
+         <%= task.name %>
+      </td>
+      <td>
+        <%= link_to("See full details of task", category_task_path(@category.id,task.id))%>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+  <div class="w-100 p-3 d-flex flex-row-reverse">
+<button type="button" class="btn btn-primary btn-sm"><%= link_to 'Add Task', new_category_task_path(@category), class: "text-decoration-none text-white"%></button><br/><br/> 
+</div>
+<div class="w-100 p-3 d-flex flex-row-reverse">
+<button type="button" class="btn btn-primary btn-sm"><%= link_to "Go to Category", category_path(@category.id), class: "text-decoration-none text-white"%></button><br/><br/>
+</div>
+</div>
+
+
+
